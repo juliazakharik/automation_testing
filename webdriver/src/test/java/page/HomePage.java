@@ -1,5 +1,6 @@
 package page;
 
+import model.Error;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -47,10 +48,13 @@ public class HomePage extends AbstractPage{
     @FindBy(xpath ="/html/body/div[3]/header/div/div/nav/ul[1]/li[3]/ul/li[1]/a")
     private WebElement howToRent;
 
-    public void openLoginForm(String loginForm) {
+    @FindBy(xpath = "//*[@id=\"login-error\"]")
+    private WebElement loginError;
+
+
+    public void openLoginForm() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebElement login = driver.findElement(By.xpath(loginForm));
-        login.click();
+        loginForm.click();
     }
 
     public void inputEmail(String email) {
@@ -75,16 +79,21 @@ public class HomePage extends AbstractPage{
         actions.moveToElement(infoButton).build().perform();
     }
 
-    public void HowToRent(String howToRent){
+    public void HowToRent(){
         moveToInfoButton();
-        WebElement how = driver.findElement(By.xpath(howToRent));
-        how.click();
+        howToRent.click();
     }
 
-    public void auth(String login, String email, String pass){
-        openLoginForm(login);
+    public void auth(String email, String pass){
+        openLoginForm();
         inputEmail(email);
         inputPass(pass);
         clickLoginButton();
+    }
+
+    public boolean checkAgeErrorMessage(Error error) {
+        return loginError.isDisplayed()
+                && loginError.getText().
+                contains(error.getErrorDescription());
     }
 }
