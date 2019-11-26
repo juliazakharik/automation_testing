@@ -38,7 +38,7 @@ public class HomePageTest extends CommonConditions{
     public void authForm(){
         page.auth("123", "123");
         Error exp = ErrorCreator.emptyErrorWithInfoFromPropety();
-        Assert.assertTrue(page.checkAgeErrorMessage(exp));
+        Assert.assertTrue(page.checkLoginErrorMessage(exp));
     }
 
 

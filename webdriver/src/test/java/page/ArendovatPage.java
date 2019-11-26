@@ -1,6 +1,8 @@
 package page;
 
 import model.Error;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,17 +16,15 @@ import java.util.concurrent.TimeUnit;
 
 public class ArendovatPage extends AbstractPage{
     private final String ARENDOVATPAGE_URL = "https://rentride.ru/arendovat/sankt-peterburg/";
-    private final WebDriverWait wait;
+    private Logger log = LogManager.getRootLogger();
 
     public ArendovatPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
-        wait = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS);
     }
 
     protected ArendovatPage(WebDriver driver, WebDriverWait wait) {
         super(driver);
-        this.wait = wait;
     }
 
     public ArendovatPage openPage() {
@@ -51,6 +51,7 @@ public class ArendovatPage extends AbstractPage{
         inputBeginRentDate(beginDate, beginTime);
         inputFinishRentDate(fiinishDate, finishTime);
         clickSearchButton();
+        log.info("Trying to rent");
     }
 
     public void inputBeginRentDate(String date, String time){

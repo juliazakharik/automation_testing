@@ -2,6 +2,7 @@ package page;
 
 import model.Error;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,17 +13,15 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 public class HomePage extends AbstractPage{
     private final String HOMEPAGE_URL =
             "https://rentride.ru/";
-    private final WebDriverWait wait;
+    private Logger log = LogManager.getRootLogger();
 
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
-        wait = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS);
     }
 
     public HomePage openPage() {
@@ -55,6 +54,7 @@ public class HomePage extends AbstractPage{
     public void openLoginForm() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginForm.click();
+        log.info("Login form is opened");
     }
 
     public void inputEmail(String email) {
@@ -72,6 +72,7 @@ public class HomePage extends AbstractPage{
 
     public void clickLoginButton() {
         loginButton.click();
+        log.info("Trying to log");
     }
 
     public void moveToInfoButton(){
@@ -91,7 +92,7 @@ public class HomePage extends AbstractPage{
         clickLoginButton();
     }
 
-    public boolean checkAgeErrorMessage(Error error) {
+    public boolean checkLoginErrorMessage(Error error) {
         return loginError.isDisplayed()
                 && loginError.getText().
                 contains(error.getErrorDescription());
