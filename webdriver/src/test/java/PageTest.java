@@ -30,7 +30,7 @@ public class PageTest {
     public void auth(){
         page.auth("/html/body/div[3]/header/div/div/nav/ul[2]/li[4]/a", "123", "123");
     }
-    
+
     @Test
     public void how(){
         page.HowToRent("/html/body/div[3]/header/div/div/nav/ul[1]/li[3]/ul/li[1]/a");
