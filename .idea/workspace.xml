@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52b3a421-297f-4307-9379-bc60693526dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/github-automation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/github-automation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdriver/src/test/java/model/Age.java" beforeDir="false" afterPath="$PROJECT_DIR$/webdriver/src/test/java/model/Age.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdriver/src/test/java/model/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/webdriver/src/test/java/model/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdriver/src/test/java/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/webdriver/src/test/java/model/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdriver/src/test/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/webdriver/src/test/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdriver/src/test/java/page/ArendovatPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/webdriver/src/test/java/page/ArendovatPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webdriver/src/test/java/page/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/webdriver/src/test/java/page/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ci/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ci/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ci/src/test/java/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ci/src/test/java/AppTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +247,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576490551371" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../алгоритмы/search" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ci" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
