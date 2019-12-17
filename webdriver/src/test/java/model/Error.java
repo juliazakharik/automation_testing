@@ -1,12 +1,16 @@
 package model;
 
 import java.util.Objects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Error {
     private String errorDescription;
+    private static final Logger LOGGER = LogManager.getRootLogger();
 
     public Error(String errorDescription) {
         this.errorDescription = errorDescription;
+        LOGGER.info("Error initialised");
     }
 
     public String getErrorDescription() {

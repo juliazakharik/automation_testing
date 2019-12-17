@@ -1,16 +1,20 @@
 package model;
 
 import java.util.Objects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class User {
 
     private String username;
     private String password;
+    private static final Logger LOGGER = LogManager.getRootLogger();
 
 
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+        LOGGER.info("User initialised");
     }
 
     public String getUsername() {

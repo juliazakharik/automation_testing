@@ -1,16 +1,20 @@
 package model;
 
 import java.util.Objects;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Location {
     private String country;
     private String city;
     private String locationInCity;
+    private static final Logger LOGGER = LogManager.getRootLogger();
 
-    public Location(String country, String city, String placeInCity) {
+    public Location(String country, String city, String locationInCity) {
         this.country = country;
         this.city = city;
-        this.locationInCity = placeInCity;
+        this.locationInCity = locationInCity;
+        LOGGER.info("Location initialised");
     }
 
     public String getCountry() {

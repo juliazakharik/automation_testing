@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class HomePage extends AbstractPage{
+    private static final Logger LOGGER = LogManager.getRootLogger();
     private final String HOMEPAGE_URL =
             "https://rentride.ru/";
     private Logger log = LogManager.getRootLogger();
@@ -22,10 +23,12 @@ public class HomePage extends AbstractPage{
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(this.driver, this);
+        LOGGER.info("Created HomePage");
     }
 
     public HomePage openPage() {
         driver.navigate().to(HOMEPAGE_URL);
+        LOGGER.info("Home page opened");
         return this;
     }
 
