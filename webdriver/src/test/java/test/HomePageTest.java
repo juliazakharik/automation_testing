@@ -1,6 +1,7 @@
 package test;
 
-import model.Error;
+import model.Age;
+import model.ErrorAlert;
 import model.Location;
 import org.junit.After;
 import org.junit.Assert;
@@ -8,7 +9,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import page.ArendovatPage;
 import page.HomePage;
+import service.AgeCreator;
 import service.ErrorCreator;
 import service.LocationCreator;
 
@@ -35,10 +38,28 @@ public class HomePageTest extends CommonConditions{
     }
 
     @Test
-    public void authForm(){
+    public void WrongLoginEnteredTest(){
         page.auth("123", "123");
-        Error exp = ErrorCreator.emptyErrorWithInfoFromPropety();
+        ErrorAlert exp = ErrorCreator.emptyError();
         Assert.assertTrue(page.checkLoginErrorMessage(exp));
+    }
+
+    @Test
+    public void emptyInputLoginTest(){
+        HomePage page = new HomePage(driver).openPage();
+        page.clickLoginButton();
+        ErrorAlert expectedError = ErrorCreator.emptyError();
+        Assert.assertTrue(page.checkLoginErrorMessage(expectedError));
+    }
+
+    @Test
+    public void loginToArendovatTest(){
+        HomePage page = new HomePage(driver).openPage();
+        page.auth("zakhrik.julia@gmail.com", "qwerty123");
+        String homePageURL = page.getURL();
+        ArendovatPage arendovatPage = new ArendovatPage(driver).openPage();
+        String loginPageURL = arendovatPage.getURL();
+        Assert.assertEquals(homePageURL, loginPageURL);
     }
 
 

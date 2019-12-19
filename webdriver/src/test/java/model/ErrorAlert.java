@@ -4,11 +4,11 @@ import java.util.Objects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Error {
+public class ErrorAlert {
     private String errorDescription;
     private static final Logger LOGGER = LogManager.getRootLogger();
 
-    public Error(String errorDescription) {
+    public ErrorAlert(String errorDescription) {
         this.errorDescription = errorDescription;
         LOGGER.info("Error initialised");
     }
@@ -24,8 +24,8 @@ public class Error {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Error)) return false;
-        Error error = (Error) o;
+        if (!(o instanceof ErrorAlert)) return false;
+        ErrorAlert error = (ErrorAlert) o;
         return Objects.equals(getErrorDescription(), error.getErrorDescription());
     }
 

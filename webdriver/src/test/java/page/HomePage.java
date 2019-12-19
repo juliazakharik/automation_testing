@@ -1,6 +1,6 @@
 package page;
 
-import model.Error;
+import model.ErrorAlert;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -54,6 +54,7 @@ public class HomePage extends AbstractPage{
     private WebElement loginError;
 
 
+
     public void openLoginForm() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginForm.click();
@@ -78,6 +79,11 @@ public class HomePage extends AbstractPage{
         log.info("Trying to log");
     }
 
+    public String getURL(){
+        String URL = HOMEPAGE_URL;
+        return URL;
+    }
+
     public void moveToInfoButton(){
         Actions actions = new Actions(driver);
         actions.moveToElement(infoButton).build().perform();
@@ -95,7 +101,7 @@ public class HomePage extends AbstractPage{
         clickLoginButton();
     }
 
-    public boolean checkLoginErrorMessage(Error error) {
+    public boolean checkLoginErrorMessage(ErrorAlert error) {
         return loginError.isDisplayed()
                 && loginError.getText().
                 contains(error.getErrorDescription());

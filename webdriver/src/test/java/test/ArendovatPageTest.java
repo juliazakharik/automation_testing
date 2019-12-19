@@ -1,16 +1,15 @@
 package test;
 
-import model.Error;
+import model.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import page.ArendovatPage;
-import page.HomePage;
-import service.ErrorCreator;
+import service.*;
 
-import static org.junit.Assert.*;
+import java.util.List;
 
 public class ArendovatPageTest {
     private WebDriver driver;
@@ -25,9 +24,47 @@ public class ArendovatPageTest {
     }
     @Test
     public void rentCarTest(){
-        page.rentCar("123122", "1231", "102931", "1232");
-        Error exp = ErrorCreator.rentErrorWithInfoFromProperty();
-        Assert.assertTrue(page.checkAgeErrorMessage(exp));
+        Date date = new Date("123122",  "102931");
+        Time time = new Time("102931", "1232");
+        page.rentCar(date, time, new Location("Belarus", "Minsk","Bsu"));
+        ErrorAlert exp = ErrorCreator.rentError();
+        Assert.assertTrue(page.ageErrorMessage(exp));
     }
+
+    @Test
+    public void invalidAgeTest() {
+        ArendovatPage page = new ArendovatPage(driver).openPage();
+        Location location = LocationCreator.infoLocation();
+        page.selectLocation(location);
+        Age age = AgeCreator.infoAge();
+        page.setAge(age);
+        page.clickSearchButton();
+        ErrorAlert expectedError = ErrorCreator.ageError();
+        Assert.assertTrue(page.ageErrorMessage(expectedError));
+    }
+
+    @Test
+    public void invalidDateTest() {
+        ArendovatPage page = new ArendovatPage(driver).openPage();
+        Location location = LocationCreator.infoLocation();
+        page.selectLocation(location);
+        Date date = DateCreator.infoDate();
+        page.setDate(date);
+        page.clickSearchButton();
+        ErrorAlert expectedError = ErrorCreator.ageError();
+        Assert.assertTrue(page.ageErrorMessage(expectedError));
+    }
+
+
+    @Test
+    public void emptyInputTest() {
+        ArendovatPage page = new ArendovatPage(driver).openPage();
+        page.clickSearchButton();
+        ErrorAlert expectedError = ErrorCreator.emptyError();
+        Assert.assertTrue(page.locationErrorMessage(expectedError));
+    }
+
+
+
 
 }

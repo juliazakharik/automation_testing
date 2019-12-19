@@ -1,7 +1,7 @@
 package service;
 
+
 import model.Age;
-import model.User;
 
 public class AgeCreator {
     public static final String TESTDATA_AGE = "testdata.age";
