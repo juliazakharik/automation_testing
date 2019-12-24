@@ -7,7 +7,8 @@ public class ErrorCreator {
             "testdata.empty.fields.error";
     private static final String AGE_ERROR =
             "testdata.rent.error";
-
+    private static final String ERROR_MESSAGE_BOOK_DATE_ORDER =
+            "testdata.book.date.late.error";
 
     public static ErrorAlert rentError() {
         return new ErrorAlert(TestDataReader.getTestData(AGE_ERROR));

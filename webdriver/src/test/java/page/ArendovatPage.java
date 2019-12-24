@@ -60,6 +60,7 @@ public class ArendovatPage extends AbstractPage{
     @FindBy(xpath = "//*[@id=\"cars-filter-property-availability-date-end\"]")
     private WebElement finishRentDate;
 
+
     @FindBy(xpath = "//*[@id=\"card_27567\"]/div/div[2]/div[2]/div[2]/a[2]")
     private WebElement rentButton;
 
@@ -161,6 +162,10 @@ public class ArendovatPage extends AbstractPage{
         return rentError.isDisplayed()
                 && rentError.getText().
                 contains(error.getErrorDescription());
+    }
+
+    public void choosePickUpDate(){
+
     }
 
     public boolean loginErrorMessage(ErrorAlert error) {

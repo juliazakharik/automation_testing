@@ -12,6 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class HomePage extends AbstractPage{
@@ -31,6 +34,7 @@ public class HomePage extends AbstractPage{
         LOGGER.info("Home page opened");
         return this;
     }
+
 
     @FindBy(xpath = "/html/body/div[3]/header/div/div/nav/ul[2]/li[4]/a")
     private WebElement loginForm;
@@ -52,6 +56,9 @@ public class HomePage extends AbstractPage{
 
     @FindBy(xpath = "//*[@id=\"login-error\"]")
     private WebElement loginError;
+
+    @FindBy(className = "link-location js-popup-regions")
+    private WebElement getCities;
 
 
 
@@ -105,5 +112,17 @@ public class HomePage extends AbstractPage{
         return loginError.isDisplayed()
                 && loginError.getText().
                 contains(error.getErrorDescription());
+    }
+
+    public List<String> getAllCities() {
+        List<WebElement> cities = new Select(getCities).getOptions();
+        List<String> s = new ArrayList<>();
+        Iterator<WebElement> itr = cities.iterator();
+        while (itr.hasNext()) {
+            String city = itr.next().getText();
+            s.add(itr.next().getText());
+            LOGGER.debug("City: " + city);
+        }
+        return s;
     }
 }
