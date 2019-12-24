@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="468ab7dd-209e-4174-afcf-cafbb012545c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../webdriver/src/test/java/page/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../webdriver/src/test/java/page/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webdriver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../webdriver/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -131,7 +131,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577196673237" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577196770626" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../webdriver" />
@@ -194,7 +194,7 @@
       <updated>1576600574428</updated>
       <workItem from="1576600575994" duration="2332000" />
       <workItem from="1576764699589" duration="2255000" />
-      <workItem from="1577179032735" duration="5008000" />
+      <workItem from="1577179032735" duration="5105000" />
     </task>
     <servers />
   </component>
@@ -204,7 +204,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9595000" />
+    <option name="totallyTimeSpent" value="9692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
