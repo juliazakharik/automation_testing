@@ -68,17 +68,17 @@ public class HomePageTest extends CommonConditions{
         String loginPageURL = arendovatPage.getURL();
         Assert.assertEquals(homePageURL, loginPageURL);
     }
-
-    @Test
-    public void checkAvailablePlaces() {
-        HomePage page = new HomePage(driver).openPage();
-        Location loc = LocationCreator.infoLocation();
-        page.selectCountry(loc.getCountry());
-        page.selectCity(loc.getCity());
-        List<String> expectedPlaces = loc;
-        List<String> actualPlaces = page.getAllCities();
-        Assert.assertEquals(expectedPlaces, actualPlaces);
-    }
+//
+//    @Test
+//    public void checkAvailablePlaces() {
+//        HomePage page = new HomePage(driver).openPage();
+//        Location loc = LocationCreator.infoLocation();
+//        page.selectCountry(loc.getCountry());
+//        page.selectCity(loc.getCity());
+//        List<String> expectedPlaces = loc;
+//        List<String> actualPlaces = page.getAllCities();
+//        Assert.assertEquals(expectedPlaces, actualPlaces);
+//    }
 
 
 

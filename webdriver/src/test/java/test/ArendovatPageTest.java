@@ -68,50 +68,50 @@ public class ArendovatPageTest {
         Assert.assertTrue(page.locationErrorMessage(expectedError));
     }
 
-    @Test
-    public void bookingPickupWrongTime() {
-        User user = UserCreator.withCredentialsFromProperty();
-        Location loc = new Location("Belarus", "Minsk", "Bsu");
-        Date date = new Date("26.12.2019", "27.12.2019");
-        Age age = new Age(20);
-        String errorMessage = new ArendovatPage(driver)
-                .openPage()
-                .selectLocation(loc)
-                .inputBeginRentDate(date.getDateNow().plusDays(2))
-                .inputFinishRentDate(date.getDateNow().plusDays(2))
-                .setAge(age)
-                .getErrorMessage();
-
-        Assert.assertEquals(errorMessage, ERROR_MESSAGE_BOOK_DATE_ORDER);
-        logger.log(Level.INFO, "Impossible to book before now");
-    }
-
-    @Test
-    public void impossiblePlacesForBooking() {
-        ArendovatPage page = new ArendovatPage(driver).openPage();
-        Location loc = LocationCreator.infoLocation();
-        page.openPage()
-                .selectLocation(loc)
-                .selectCar();
-        Assert.assertEquals("Sorry! No Budget locations are available in address provided.!",
-                page.getErrorMessage());
-        logger.log(Level.INFO, "Impossible place to book ");
-    }
-
-    @Test
-    public void cannotBeReturnedOnTheSameDayAtTheSameTime() {
-        ArendovatPage page = new ArendovatPage(driver).openPage();
-        Date date = DateCreator.infoDate();
-        Location loc = LocationCreator.infoLocation();
-        page.openPage()
-                .selectLocation(loc)
-                .inputBeginRentDate(date.getDateNow().plusDays(2))
-                .inputFinishRentDate(date.getDateNow().plusDays(2))
-                .clickSearchButton()
-        Assert.assertEquals("Pick-up Date cannot be after Return Date.",
-                page.getErrorMessage());
-        logger.log(Level.INFO, "Cant return car at the day rent");
-    }
+//    @Test
+//    public void bookingPickupWrongTime() {
+//        User user = UserCreator.withCredentialsFromProperty();
+//        Location loc = new Location("Belarus", "Minsk", "Bsu");
+//        Date date = new Date("26.12.2019", "27.12.2019");
+//        Age age = new Age(20);
+//        String errorMessage = new ArendovatPage(driver)
+//                .openPage()
+//                .selectLocation(loc)
+//                .inputBeginRentDate(date.getDateNow().plusDays(2))
+//                .inputFinishRentDate(date.getDateNow().plusDays(2))
+//                .setAge(age)
+//                .getErrorMessage();
+//
+//        Assert.assertEquals(errorMessage, ERROR_MESSAGE_BOOK_DATE_ORDER);
+//        logger.log(Level.INFO, "Impossible to book before now");
+//    }
+//
+//    @Test
+//    public void impossiblePlacesForBooking() {
+//        ArendovatPage page = new ArendovatPage(driver).openPage();
+//        Location loc = LocationCreator.infoLocation();
+//        page.openPage()
+//                .selectLocation(loc)
+//                .selectCar();
+//        Assert.assertEquals("Sorry! No Budget locations are available in address provided.!",
+//                page.getErrorMessage());
+//        logger.log(Level.INFO, "Impossible place to book ");
+//    }
+//
+//    @Test
+//    public void cannotBeReturnedOnTheSameDayAtTheSameTime() {
+//        ArendovatPage page = new ArendovatPage(driver).openPage();
+//        Date date = DateCreator.infoDate();
+//        Location loc = LocationCreator.infoLocation();
+//        page.openPage()
+//                .selectLocation(loc)
+//                .inputBeginRentDate(date.getDateNow().plusDays(2))
+//                .inputFinishRentDate(date.getDateNow().plusDays(2))
+//                .clickSearchButton()
+//        Assert.assertEquals("Pick-up Date cannot be after Return Date.",
+//                page.getErrorMessage());
+//        logger.log(Level.INFO, "Cant return car at the day rent");
+//    }
 
 
 
