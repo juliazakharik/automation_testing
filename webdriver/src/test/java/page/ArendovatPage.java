@@ -2,7 +2,6 @@ package page;
 
 import model.*;
 
-import org.apache.log4j.LogManager;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
