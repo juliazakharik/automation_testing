@@ -1,12 +1,14 @@
 package model;
 
 import java.util.Objects;
+import java.util.logging.Logger;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Age {
     private int age;
-    private static final Logger LOGGER = LogManager.getRootLogger();
+    private static final Logger LOGGER = null;
 
     public Age(int age) {
         this.age = age;

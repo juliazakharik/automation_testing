@@ -1,8 +1,8 @@
 package page;
 
 import model.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.LogManager;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,12 +15,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Logger;
 
 
 public class ArendovatPage extends AbstractPage{
-    private static final Logger LOGGER = LogManager.getRootLogger();
+    private static final Logger LOGGER = null;
     private final String ARENDOVATPAGE_URL = "https://rentride.ru/arendovat/sankt-peterburg/";
-    private Logger log = LogManager.getRootLogger();
     private final WebDriverWait wait = null;
 
     public ArendovatPage(WebDriver driver) {
@@ -78,7 +78,7 @@ public class ArendovatPage extends AbstractPage{
         inputFinishRentDate(date.getEndDate(), time.getEndTime());
         selectLocation(location);
         clickSearchButton();
-        log.info("Trying to rent");
+        LOGGER.info("Trying to rent");
     }
 
     public void selectCountry(String country) {
