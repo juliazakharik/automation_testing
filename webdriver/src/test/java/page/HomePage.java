@@ -114,15 +114,15 @@ public class HomePage extends AbstractPage{
                 contains(error.getErrorDescription());
     }
 
-    public List<String> getAllCities() {
-        List<WebElement> cities = new Select(getCities).getOptions();
-        List<String> s = new ArrayList<>();
-        Iterator<WebElement> itr = cities.iterator();
-        while (itr.hasNext()) {
-            String city = itr.next().getText();
-            s.add(itr.next().getText());
-            LOGGER.debug("City: " + city);
-        }
-        return s;
-    }
+//    public List<String> getAllCities() {
+//        List<WebElement> cities = new Select(getCities).getOptions();
+//        List<String> s = new ArrayList<>();
+//        Iterator<WebElement> itr = cities.iterator();
+//        while (itr.hasNext()) {
+//            String city = itr.next().getText();
+//            s.add(itr.next().getText());
+//            LOGGER.debug("City: " + city);
+//        }
+//        return s;
+//    }
 }
